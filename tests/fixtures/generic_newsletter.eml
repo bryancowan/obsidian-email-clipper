@@ -1,0 +1,25 @@
+From: Some Author <newsletter@example.invalid>
+To: test@example.invalid
+Subject: An Article About Things
+Date: Wed, 06 May 2026 12:00:00 +0000
+Message-ID: <synthetic-2@example.invalid>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============4767078764729024240=="
+
+--===============4767078764729024240==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+plain text fallback
+
+--===============4767078764729024240==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><h2>An Article About Things</h2><p>The opening paragraph contains=
+ enough prose to qualify as a description for the resulting Obsidian note's f=
+rontmatter field.</p><p>Follow Us</p></body></html>
+
+--===============4767078764729024240==--

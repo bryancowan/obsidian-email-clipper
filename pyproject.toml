@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obsidian-email-clipper"
+version = "0.1.0"
+description = "Convert email newsletters into Obsidian Web Clipper-compatible markdown notes (.eml → vault)"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Bryan Cowan" }]
+requires-python = ">=3.11"
+keywords = ["obsidian", "email", "newsletter", "markdown", "eml", "clipper"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Email",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "markdownify>=0.13",
+    "python-slugify>=8.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/bryancowan/obsidian-email-clipper"
+Repository = "https://github.com/bryancowan/obsidian-email-clipper"
+Issues = "https://github.com/bryancowan/obsidian-email-clipper/issues"
+
+[project.scripts]
+email-clipper = "email_clipper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

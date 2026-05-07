@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Template rendered by `make install`. Placeholders substituted:
+    @APP_DIR@   → runtime directory (typically $HOME/Library/Application Support/email-clipper)
+    @INBOX@     → drop folder (typically $HOME/Obsidian Inbox)
+    @LOGS@      → log directory (typically $HOME/Library/Logs)
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.obsidian-email-clipper</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>@APP_DIR@/process-inbox.sh</string>
+    </array>
+
+    <key>WatchPaths</key>
+    <array>
+        <string>@INBOX@</string>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>@LOGS@/email-clipper.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>@LOGS@/email-clipper.err.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    </dict>
+</dict>
+</plist>

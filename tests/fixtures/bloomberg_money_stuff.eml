@@ -1,0 +1,77 @@
+From: Matt Levine <noreply@news.bloomberg.com>
+To: test@example.invalid
+Subject: Money Stuff: Test Newsletter Story
+Date: Mon, 04 May 2026 18:11:33 +0000
+Message-ID: <synthetic-1@example.invalid>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============1855680280559744888=="
+
+--===============1855680280559744888==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Test Newsletter Story
+
+This is the opening paragraph of a synthetic newsletter.
+
+Follow Us | Unsubscribe
+
+--===============1855680280559744888==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body>
+<table id=3D"wrapper"><tr><td>
+
+<!-- top chrome: brand strip + view-in-browser -->
+<table><tr>
+  <td><img src=3D"https://example.invalid/pixel.gif" width=3D"1" height=3D"1"=
+></td>
+  <td><img src=3D"https://example.invalid/sponsor-banner.png" alt=3D"Sponsor"=
+></td>
+  <td><a href=3D"https://links.message.bloomberg.com/s/c/OPAQUE_TOKEN_VIB">Vi=
+ew in browser</a></td>
+</tr></table>
+
+<!-- article body -->
+<table><tr><td>
+  <h2>Test Newsletter Story</h2>
+  <p>This is the opening paragraph of a synthetic newsletter, long enough to =
+be
+  picked up as the description by the first-paragraph heuristic in the conver=
+ter.
+  It also contains an inline <a href=3D"https://links.message.bloomberg.com/s=
+/c/OPAQUE_TOKEN_INLINE">tracker link</a>
+  to confirm those are preserved verbatim in v1.</p>
+
+  <p>A second paragraph with a <strong>bold phrase</strong> and an <em>italic=
+ phrase</em>.</p>
+
+  <ul>
+    <li>First bullet</li>
+    <li>Second bullet</li>
+  </ul>
+
+  <h2>Second Section</h2>
+  <p>Content under the second heading.</p>
+</td></tr></table>
+
+<!-- footer chrome -->
+<table><tr><td>
+  Follow Us
+  <a href=3D"https://links.message.bloomberg.com/s/c/OPAQUE_TWITTER"><img src=
+=3D"https://example.invalid/twitter.png"></a>
+  <br>
+  You received this message because you are subscribed to the Test newsletter.
+  <br>
+  <a href=3D"https://links.message.bloomberg.com/s/c/OPAQUE_UNSUB">Unsubscrib=
+e</a>
+  | Test Publisher Inc. 1 Test Street, Testville
+</td></tr></table>
+
+</td></tr></table>
+</body></html>
+
+--===============1855680280559744888==--
