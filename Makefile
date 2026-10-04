@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 
+PYTHON     ?= python3.13
 REPO       := $(shell pwd)
 APP_DIR    := $(HOME)/Library/Application Support/email-clipper
 VENV       := $(APP_DIR)/venv
@@ -27,7 +28,7 @@ help:
 
 install:
 	@mkdir -p "$(APP_DIR)" "$(INBOX)" "$(LOGS)"
-	@test -d "$(VENV)" || python3 -m venv "$(VENV)"
+	@test -d "$(VENV)" || $(PYTHON) -m venv "$(VENV)"
 	@"$(VENV)/bin/pip" install --quiet --upgrade pip
 	@"$(VENV)/bin/pip" install --quiet --force-reinstall "$(REPO)"
 	@cp scripts/process-inbox.sh "$(SCRIPT)"
@@ -75,6 +76,6 @@ test: dev
 	@.venv/bin/pytest
 
 dev:
-	@test -d .venv || python3 -m venv .venv
+	@test -d .venv || $(PYTHON) -m venv .venv
 	@.venv/bin/pip install --quiet --upgrade pip
 	@.venv/bin/pip install --quiet -e ".[dev]"
