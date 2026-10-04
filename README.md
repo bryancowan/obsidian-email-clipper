@@ -16,7 +16,7 @@ Built for paywalled newsletters that the browser-extension Web Clipper can't rea
 
 ## Install
 
-Requires Python 3.11+ and macOS for the optional folder watcher (the CLI itself is cross-platform).
+Requires Python 3.11+ and macOS for the optional folder watcher (the CLI itself is cross-platform). The Makefile builds its venvs with `python3.13` when that is on your `PATH` and falls back to `python3` otherwise; pick a specific interpreter with `make install PYTHON=python3.12` (`make dev` accepts it too).
 
 ```bash
 git clone https://github.com/bryancowan/obsidian-email-clipper.git

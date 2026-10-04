@@ -1,7 +1,11 @@
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 
-PYTHON     ?= python3.13
+# Interpreter for the venvs: python3.13 (what CI and the runtime venv use) when it is on PATH,
+# otherwise python3. Override per run with `make dev PYTHON=python3.12`.
+ifndef PYTHON
+PYTHON := $(or $(shell command -v python3.13),python3)
+endif
 REPO       := $(shell pwd)
 APP_DIR    := $(HOME)/Library/Application Support/email-clipper
 VENV       := $(APP_DIR)/venv
