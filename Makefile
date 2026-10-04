@@ -1,6 +1,11 @@
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 
+# Interpreter for the venvs: python3.13 (what CI and the runtime venv use) when it is on PATH,
+# otherwise python3. Override per run with `make dev PYTHON=python3.12`.
+ifndef PYTHON
+PYTHON := $(or $(shell command -v python3.13),python3)
+endif
 REPO       := $(shell pwd)
 APP_DIR    := $(HOME)/Library/Application Support/email-clipper
 VENV       := $(APP_DIR)/venv
@@ -27,7 +32,7 @@ help:
 
 install:
 	@mkdir -p "$(APP_DIR)" "$(INBOX)" "$(LOGS)"
-	@test -d "$(VENV)" || python3 -m venv "$(VENV)"
+	@test -d "$(VENV)" || $(PYTHON) -m venv "$(VENV)"
 	@"$(VENV)/bin/pip" install --quiet --upgrade pip
 	@"$(VENV)/bin/pip" install --quiet --force-reinstall "$(REPO)"
 	@cp scripts/process-inbox.sh "$(SCRIPT)"
@@ -75,6 +80,6 @@ test: dev
 	@.venv/bin/pytest
 
 dev:
-	@test -d .venv || python3 -m venv .venv
+	@test -d .venv || $(PYTHON) -m venv .venv
 	@.venv/bin/pip install --quiet --upgrade pip
 	@.venv/bin/pip install --quiet -e ".[dev]"
